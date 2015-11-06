@@ -1,0 +1,45 @@
+<% text = "This is a long ipsum lorem sample. It includes line breaks \n and double line breaks. \n\n It continues until we get to the last line." %>
+
+<h2>Word Wrap</h2>
+<%= word_wrap(text, :line_width => 30) %>
+<hr />
+
+<h2>Simple Format + Word Wrap</h2>
+<%= simple_format(word_wrap(text, :line_width => 30)) %>
+<hr />
+
+<h2>Simple Format</h2>
+<%= simple_format(text) %>
+<hr />
+
+<h2>Truncate</h2>
+<%= truncate(text, :length => 40, :omission => "...") %>
+<hr />
+
+<h2>Excerpt</h2>
+<%= excerpt(text, 'includes', :radius => 7, :omission => "...") %>
+<hr />
+
+<h2>Highlight</h2>
+<%= highlight(text, 'sample text') %>
+<hr />
+<%= highlight(text, ['sample', 'stuff'], :highlight => '<em>\1</em>' ) %>
+<hr />
+
+<h2>Pluralize</h2>
+<%= "student".pluralize %><br />
+<%= "ox".pluralize %><br />
+<%= pluralize(2, 'tutorial') %><br />
+<br />
+<% [0, 1, 20].each do |n| %>
+  <%= pluralize(n, 'tutorial') %><br />
+    <%= pluralize(n, 'octopus') %><br />
+    <%= pluralize(n, 'snipe', 'snope') %><br />
+<% end %>
+<hr />
+
+<h2>Cycle</h2>
+<% 5.times do %>
+  <%= cycle('red', 'green', 'blue') %><br />
+<% end %>
+<hr />
