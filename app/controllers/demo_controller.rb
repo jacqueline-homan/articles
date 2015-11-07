@@ -1,7 +1,7 @@
 class DemoController < ApplicationController
   # If you want to suppress the automatic generated layout,
   # use this line of code:
-  layout false
+  layout 'application'
 
   def index
   	#render('hello')
